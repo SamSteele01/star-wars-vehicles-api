@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 export default class SearchForm extends React.Component {
   constructor(props) {
@@ -40,13 +40,13 @@ export default class SearchForm extends React.Component {
   }
   render() {
     return (
-      <div className="card">
+      <div className="card-form">
 
         <div className="card-block">
 
           <div className="form-group-row">
             <form onChange={this.handleFormSubmit}>
-              <div>
+              <div className="form-group">
                 <label htmlFor="pilotName-text-input" className="col-2 col-form-label">What is your name, pilot?</label>
               </div>
               <div>

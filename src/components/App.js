@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../styles/App.css';
 import Jumbotron from './jumbotron.js';
 import SearchForm from './searchForm.js';
+import Vehicles from './vehicles.js';
 
 class App extends Component {
   // PROPS AND STATE
@@ -16,7 +17,7 @@ class App extends Component {
     // See form lesson for details.
     // Enter your code below:
 
-  
+
 
   //  FORM: SUBMIT METHOD
   // handleSubmit below:
@@ -35,15 +36,7 @@ class App extends Component {
   // You will want to use this array when you set the state of 'vehicles'. You will need this data in your render.
   // Enter your code below:
 
-  componentWillMount() {
-    fetch('https://swapi.co/api/vehicles/')
-    .then(r => r.json() )
-    .then((data) => {
-      let vehicles = data.results;
 
-      this.setState({vehicles: vehicles})
-    })
-  }
 
   // RENDER
   // Before you can map over the data you've fetched, you will first need to store that 'state' in a variable.
@@ -65,6 +58,7 @@ class App extends Component {
 
             <Jumbotron />
             <SearchForm />
+            <Vehicles />
             {/*
             The App component needs the following:
              jumbotron section, form section, vehicle cards section.

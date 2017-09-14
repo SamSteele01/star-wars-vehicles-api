@@ -2,11 +2,16 @@
   margin: 10px;
 }
 
-.card{
+.card,
+.card-form {
   margin: 10px;
 }
 
-.form{
+.jumbotron{
+  margin-bottom: 0;
+}
+
+form{
   text-align: center;
 }
 
