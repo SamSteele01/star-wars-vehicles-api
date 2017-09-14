@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default class SearchForm extends React.Component {
   constructor(props) {
@@ -7,60 +7,39 @@ export default class SearchForm extends React.Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
     this.state = {
-        inputText: '',
+        value: '',
         pilotName: ''
       };
 
-    // FORM: HANDLE INPUT CHANGES
-    // handleNameChange below:
-    // See form lesson for details.
-    // Enter your code below:
-
   }
-
-  //  FORM: SUBMIT METHOD
-  // handleSubmit below:
-  // See form lesson for details.
-  // Once the form is sumbited, two things need to happen: set the state of pilot to the input value.
-  // Then, set the value of the input back to an empty string.
-  // Enter your code below:
 
   handleNameChange(event){
     this.setState({
-      inputText: event.target.value
+      value: event.target.value
     });
   }
 
   handleFormSubmit(event){
     event.preventDefault();
     this.setState({
-      pilotName: this.state.name,
-      inputText: ""
+      pilotName: this.state.value,
+      value: ''
     })
   }
   render() {
     return (
-      <div className="card-form">
-
+      <div className="card form">
         <div className="card-block">
-
-          <div className="form-group-row">
-            <form onChange={this.handleFormSubmit}>
+            <h2 className="card-title">What is your name, pilot?</h2>
+              <form onSubmit={this.handleFormSubmit}>
               <div className="form-group">
-                <label htmlFor="pilotName-text-input" className="col-2 col-form-label">What is your name, pilot?</label>
+                <input className="form-control col-md-4 offset-md-4" name="pilotName" type="text" value={this.state.value} onChange={this.handleNameChange} placeholder="Enter your name" />
               </div>
               <div>
-                <input className="form-control" name="name" type="text" value={this.state.name} onChange={this.handleNameChange} placeholder="Enter your name" />
-              </div>
-              <div className="col-10">
-                <p className="lead">
                   <button type="submit" className="btn btn-primary">Submit</button>
-                </p>
               </div>
             </form>
             <h3>{this.state.pilotName}</h3>
-          </div>
-
         </div>
       </div>
     );
